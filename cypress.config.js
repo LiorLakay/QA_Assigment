@@ -11,7 +11,6 @@ module.exports = defineConfig({
         readPdf(pathToPdf) {
           return new Promise((resolve) => {
             const resolvedPath = path.resolve(pathToPdf);
-            console.log(resolvedPath)
             const pdfBuffer = fs.readFileSync(resolvedPath);
             pdf(pdfBuffer).then((pdfData) => {
               resolve(pdfData.text);
